@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MemberMapper">
+	<insert id="join" parameterType="mvo">
+		insert into member (email, pwd, name) values (#{email}, #{pwd}, #{name})
+	</insert>
+	<select id="login" parameterType="mvo" resultType="mvo">
+		select * from member where email = #{email} and pwd = #{pwd}
+	</select>
+	
+	<select id="getEncPwd" parameterType="mvo" resultType="String">
+		select pwd from member where email = #{email}
+	</select>
+
+	<select id="getUserName" parameterType="mvo" resultType="String">
+		select name from member where email = #{email}
+	</select>
+	
+	<select id="e_chk" parameterType="String" resultType="int">
+		select count(email) from member where email = #{email}
+	</select>
+	<select id="t_chk" parameterType="String" resultType="int">
+		select count(email) from member where email = #{tester}
+	</select>
+	<insert id="t_join">
+		insert into member (email, pwd) values (#{tester}, #{pwd})	
+	</insert>
+
+	<select id="deposit" parameterType="String" resultType="String">
+		select deposit_usd from member where email = #{email}	
+	</select>
+	<select id="h_list" parameterType="String" resultType="avo">
+	
+		select h_num, email, symbol, avg_h_price, h_qty, cur_price,
+		cur_price * h_qty as total from account where email = #{email} 
+		and cur_price is not null order by total desc
+		
+	</select>
+		
+	<select id="w_list" parameterType="String" resultType="wvo">
+		select symbol from watch where email = #{email}
+	</select>
+	<select id="st_list" parameterType="wvo" resultType="svo">
+		select * from stock where symbol in
+		<foreach collection="list" item="wvo" open="(" separator="," close=")">#{wvo.symbol}</foreach>
+	</select>
+	<select id="hasWatchList" parameterType="String" resultType="int">
+		select count(email) from watch where email = #{email}
+	</select>
+	<select id="hasHoldList" parameterType="String" resultType="int">
+		select count(email) from account where email = #{email}
+	</select>
+	
+	<select id="getWatchList" parameterType="String" resultType="wvo">
+		select symbol from watch where email =#{email}
+	</select>
+	<select id="inYourWatchList" parameterType="HashMap" resultType="int">
+		select count(symbol) from watch where email = #{email} and symbol = #{symbol}
+	</select>
+	
+	<select id="getReportList" resultType="rvo">
+	 	select * from report
+	</select>
+	<delete id="deleteReport_all" parameterType="int">
+		delete from report where cNum = #{cNum}
+	</delete>
+	<delete id="deleteReport_one" parameterType="int">
+		delete from report where reportNum = #{reportNum}
+	</delete>
+	
+	<select id="getReportCnt" parameterType="pgvo" resultType="int">
+		select count(reportNum) as cnt from report
+	</select>
+	
+	<select id="getSpecificSymbol" parameterType="HashMap" resultType="avo">
+		select * from account where email = #{email} and symbol = #{keyword}
+	</select>
+	<select id="getSpecificSymbol_new" parameterType="String" resultType="svo">
+		select * from stock where symbol = #{keyword}
+	</select>
+	
+	<update id="deductDeposit" parameterType="HashMap">
+		update member set deposit_usd = deposit_usd - #{price} where email = #{email}
+	</update>
+	<update id="addDeposit" parameterType="HashMap">
+		update member set deposit_usd = deposit_usd + #{price} where email = #{email}
+	</update>
+	
+	<insert id="newBuy">
+		insert into account(h_num, email, symbol, avg_h_price, h_qty, cur_price)
+		values(h_num.nextval, #{email}, #{symbol}, #{avg_h_price}, #{h_qty}, #{cur_price})
+	</insert>
+	
+	<select id="getCurrentAccount" parameterType="HashMap" resultType="avo">
+		select * from account where email = #{email} and symbol = #{symbol}
+	</select>
+	<update id="updateAccount" parameterType="avo">
+		update account set avg_h_price = #{avg_h_price}, h_qty = #{h_qty}
+		where email = #{email} and symbol = #{symbol}
+	</update>
+	
+	<update id="updateAccount_sell" parameterType="avo">
+		update account set h_qty = h_qty - #{h_qty}
+		where email = #{email} and symbol = #{symbol}
+	</update>
+	<update id="deleteAccouont_sell" parameterType="avo">
+		delete from account where email = #{email} and symbol = #{symbol}
+	</update>
+
+	<delete id="delTester_member">
+		delete from member where email like 'tester%'
+	</delete>
+	<delete id="delTester_account">
+		delete from account where email like 'tester%'
+	</delete>
+	<delete id="delTester_comment">
+		delete from comment_t where writer like 'tester%'
+	</delete>
+	<delete id="delTester_liked">
+		delete from liked where writer like 'tester%'
+	</delete>
+	<delete id="delTester_report">
+		delete from report where reporter like 'tester%'
+	</delete>
+	<delete id="delTester_watch">
+		delete from watch where email like 'tester%'
+	</delete>
+</mapper>

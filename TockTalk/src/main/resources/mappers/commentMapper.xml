@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CommentMapper">
+	<resultMap type="cvo" id="commentSelectRM">
+		<result property="comment" column="comment_t"/>
+	</resultMap>
+	<insert id="post" parameterType="cvo">
+		insert into comment_t(cNum, symbol, writer, comment_t) values (cNum.nextval, #{symbol}, #{writer}, #{comment})
+	</insert>
+	<select id="c_list" parameterType="String" resultType="cvo" resultMap="commentSelectRM">
+		select * from comment_t where symbol = #{symbol}
+	</select>
+	<delete id="like_del">
+		delete from liked where cNum = #{cNum}
+	</delete>	
+	<delete id="del">
+		delete from comment_t where cNum = #{cNum}
+	</delete>
+	
+	<update id="t_up" parameterType="HashMap">
+		update comment_t set t_up = t_up + #{num} where cNum = #{cNum}
+	</update>
+	<select id="chkliked" parameterType="HashMap" resultType="Int">
+		select count(likeNum) from liked where writer = #{writer} and cNum = #{cNum}
+	</select>
+	<insert id="onLiked" parameterType="HashMap">
+		insert into liked(likeNum, cNum, writer) values(likeNum.nextval, #{cNum}, #{writer})
+	</insert>
+	<delete id="offLiked" parameterType="HashMap">
+		delete from liked where cNum = #{cNum} and writer = #{writer}
+	</delete>
+	
+	<insert id="report">
+		insert into report(reportNum, cNum, writer, content, reporter) values (reportNum.nextval, #{cNum}, #{writer}, #{content}, #{reporter})
+	</insert>
+	<select id="reported_cmt" parameterType="int" resultType="cvo">
+		select * from comment_t where cNum = #{cNum};
+	</select>
+	
+</mapper>

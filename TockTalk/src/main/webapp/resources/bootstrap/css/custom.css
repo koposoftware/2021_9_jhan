@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+#orderSheet > tbody > tr > td {
+	word-break:break-all;
+}
+
+.titleBackground {
+	background-color:#1F96881F;
+}
+
+.btnBackground {
+	background-color: #1F9688;
+	color:white;
+}
+
+.btnBackgroundTrade {
+	background-color: #1F9688;
+	color:white;
+}
+
+.grayLight {
+	color:#767675B3;
+}
+
+.grayFontBold {
+	font-weight:bolder;
+	color:#767675;
+}
+
+.grayFont {
+	color:#767675;
+}
+
+.greenFont {
+	color: #1F9688;
+}
+
+.greenFontBold {
+	font-weight:bolder;
+	color: #1F9688;
+}
+
+.greenLine {
+	border-top: 1px solid #1F9688;
+}
+
+.grayLine {
+	border-top: 1px solid #76767533;
+}
+
+.greenLineBold {
+	border-top: 1.8px solid #1F9688;
+}
+
+.none {
+	color: #767675 !important;
+}
+
+.minus {
+	color: blue;
+}
+
+.plus {
+	color: red;
+}
+
+#daily, #monthly {
+	width:100px;
+}
+
+#canvasDiv {
+	border-top: 1px solid black; 
+	border-bottom: 1px solid black; 
+	clear: both;
+}
+
+#memberForm {
+	background-color: rgb(0, 148, 144);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 660px;
+	text-align: center;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#loginBtn {
+	width: 300px;
+	height: 40px;
+	font-weight: bolder;
+	margin-top: 30px;
+}
+
+#joinBtn {
+	width: 300px;
+	height: 40px;
+	font-weight: bolder;
+}
+
+#form {
+	height: 250px;
+}
+
+.chk {
+	width: 300px;
+	height: 50px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.footer-link > li {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.footer-link>li>a:hover {
+	font-weight: bolder;
+}
+
+.footer > .footer-link {
+    text-align: left;
+    list-style: none;
+    font-size: smaller;
+    margin-left: auto;
+}
+
+.footer-link > ul > li > a {
+    text-decoration: none !important;
+}
+
+.footer {
+    width: 100%;
+    height: 140px;
+    line-height: 100%;
+    padding-top: 26px;
+}
+
+.f_link_size {
+	font-size:15px;
+}
+
+.f_size {
+	font-size:8px;
+}
+
+.orangeFontBold {
+	color: #FF8C69;
+	font-weight: bold;
+}
+
+
+
