@@ -5,7 +5,7 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark"
 	style="background-color: #1F9688 !important;
-	width:100%;position:fixed;top:0;left:0;z-index:3000; margin-bottom:30px; background-size: cover;">
+	width:100%;position:fixed;top:0;left:0;z-index:1000; margin-bottom:30px; background-size: cover;">
 	<a href = '/' class="navbar-brand" style="font-weight: bolder; font-size: 40px;">
 	<img src="/resources/assets/img/favicon.ico" height = "40px"> Hana TockTalk</a>
 	

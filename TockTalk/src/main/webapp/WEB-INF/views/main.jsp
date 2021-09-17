@@ -92,6 +92,61 @@
 						</tr>
 					</c:forEach>
 				</tbody>
+				
+				
+				<c:if test="${w_list eq null}">
+				<tfoot>
+					<tr>
+						<td colspan="6" class="grayLight">종목 리스트를 둘러보세요&nbsp;&nbsp;<a href="/stock/list/?email=${ses}"><i class="fas fa-cart-plus" style='font-size: 24px; color: #1F9688;'></i></a></td>
+					</tr>                                                    
+				</tfoot>
+				</c:if>
+
+			</table>
+		</div>
+		<div 
+			style="text-align: center; ">
+			
+			<h3 class="mb-4 mt-5 text-center greenFontBold">내 관심종목</h3>
+			<table class="table table-hover" style="width: 525px; height: 200px;  margin-left:auto; margin-right:auto;" >
+				<thead class="titleBackground">
+					<tr class="greenLineBold">
+						<th class="grayFontBold">종목코드</th>
+						<th class="grayFontBold">현재가</th>
+						<th class="grayFontBold">목표가</th>
+						<th class="grayFontBold">52주 최고가</th>
+						<th class="grayFontBold">상세</th>
+						<th class="grayFontBold">거래하기</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${w_list}" var="svo">
+						<tr>  
+							<td class="grayFont">${svo.symbol }</td>
+							<td class="grayFont">${svo.cur_price }</td>
+							<td class="grayFont">${svo.avg_target }</td>
+							<td class="grayFont">${svo.year_high }</td>
+							<td class="grayFont"><a href="/stock/detail?symbol=${svo.symbol}&email=${ses}">
+							<i class="fas fa-info-circle"
+									style='font-size: 24px; color: #1F9688;'></i></a></td>
+							<c:choose>
+							<c:when test="${ses ne null}">
+							<td class="grayFont">
+							<a class="grayFont" data-symbol="${svo.symbol}" data-toggle="modal" data-target="#buyModal" id="buying" href="#" style="color : #fF5a5a; font-weight : bold" >Buy&nbsp;</a>
+							<a class="grayFont" data-symbol="${svo.symbol}" data-toggle="modal" data-target="#sellModal" id="selling" href="#" style="color : #1F96f8; font-weight : bold">Sell</a>
+							</td>
+							</c:when>
+							<c:otherwise>
+							<td>
+							세션미확인
+							</td>
+							</c:otherwise>
+							</c:choose>
+						</tr>
+					</c:forEach>
+				</tbody>
+				
+				
 				<c:if test="${w_list eq null}">
 				<tfoot>
 					<tr>
