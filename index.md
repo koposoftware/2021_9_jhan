@@ -1,37 +1,54 @@
-## Welcome to GitHub Pages
+# 프로젝트 제목
 
-You can use the [editor on GitHub](https://github.com/koposoftware/2021_9_jhan/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+[프로젝트 홈페이지 - https://koposoftware.github.io/template/](https://koposoftware.github.io/template/)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# 1. 프로젝트 개요
 
-### Markdown
+이것은 프로젝트 개요입니다. 글과 그림을 이용하여 개요를 설명하세요.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# 2. 프로젝트 제안서
 
-```markdown
-Syntax highlighted code block
+프로젝트 제안서를 설명하세요. 발표자료와 동영상을 추가하세요. 시스템의 아키텍쳐 설명도 추가하세요.
 
-# Header 1
-## Header 2
-### Header 3
+   <img src="ppt.jpg"/>[발표자료](/project.pptx)<br>
+   <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
+ 
 
-- Bulleted
-- List
+# 3. 프로젝트 결과
+프로젝트 결과를 추가하세요. 발표자료. 시연동영상을 추가하세요.
 
-1. Numbered
-2. List
+## 발표 ppt 
+   <img src="ppt.jpg"/>[발표자료](/project.pptx)<br>
 
-**Bold** and _Italic_ and `Code` text
+## 시연 동영상 
 
-[Link](url) and ![Image](src)
-```
+   <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+# 4. 본인 소개
 
-### Jekyll Themes
+본인 소개를 추가하세요
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/koposoftware/2021_9_jhan/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+|이름 |고길동|![gdKO](/gdko.jpg)|
+|연락처 | gdko(@)kopo.ac.kr|
+|skill set| Frontend - HTML, CSS, Javascript|
+| | Backend - Java, Spring, Oracle|
+|자격증|  |
+|수상| |
+|특기사항|  TOEIC 990 |
 
-### Support or Contact
+# 5. 기타
+그외 프로젝트를 더욱 설명할수 있는 것들을 추가하세요
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+# 홈페이지 설정
+ 본인 repository에서 "Setting"를 들어가서 GitHub Pages에서 설정 변경.
+* Source
+ Source에서 원하는 branch와 directory 설정한다. 
+ 기본값은 master 에 root를 설정 
+ Save 버튼 꼭 누른다.
+ 
+ * Theme Chooser
+ theme을 변경하여 좀더 이쁜 홈페이지를 만든다.
+   
+   <img src="homepage.JPG"/><br>
+   
+ 
