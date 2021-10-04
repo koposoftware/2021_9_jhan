@@ -8,7 +8,7 @@
 
 # 2. 프로젝트 제안서
 
-   <img src="ppt.pg"/>[발표자료](/project.pptx)<br>
+   <img src="ppt.png"/>[발표자료](/ppt1.pptx)<br>
    <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
  
 
@@ -25,13 +25,16 @@
 
 본인 소개를 추가하세요
 
-|이름 |안재훈|![An JaeHun](/gdko.jpg)|
+|이름 |안재훈|![An JaeHun](/ANJAEHUN.jpg)|
+
 |연락처 | dybe15(@)naver.com|
+
 |skill set| Frontend - HTML, CSS, Javascript|
+
 | | Backend - Java, Spring, Oracle|
+
 |자격증|  정보처리기사|
 
-# 5. 기타
-그외 프로젝트를 더욱 설명할수 있는 것들을 추가하세요
+# 5. 프로젝트 사용기술 
 
- 
+ (/skill.png)
