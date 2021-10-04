@@ -25,7 +25,7 @@
 
 본인 소개를 추가하세요
 
-|이름 |안재훈|![An JaeHun](/ANJAEHUN.jpg)|
+|이름 |안재훈|!  <img src="ppt.png"/>[An JaeHun](/ANJAEHUN.jpg)|
 
 |연락처 | dybe15(@)naver.com|
 
@@ -37,4 +37,4 @@
 
 # 5. 프로젝트 사용기술 
 
- (/skill.png)
+  <img src="skill.png"/>[사용기술](/skill.png)
