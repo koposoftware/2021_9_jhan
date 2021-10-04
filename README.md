@@ -9,8 +9,7 @@
 # 2. 프로젝트 제안서
 
    <img src="ppt.png"/>[발표자료](/ppt1.pptx)<br>
-   <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
- 
+
 
 # 3. 프로젝트 결과
 
@@ -25,7 +24,7 @@
 
 본인 소개를 추가하세요
 
-|이름 |안재훈|!  <img src="ppt.png"/>[An JaeHun](/ANJAEHUN.jpg)|
+|이름 |안재훈|!  <img src="ANJAEHUN.jpg"/>[An JaeHun](/ANJAEHUN.jpg)|
 
 |연락처 | dybe15(@)naver.com|
 
