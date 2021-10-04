@@ -5,8 +5,8 @@
 <jsp:include page="../common/header.jsp" />
 <jsp:include page="../common/nav.jsp" />
 <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
-<div class="container">
-	<div >
+<div class="container" style='width:80%;'>
+	<div  style='width:80%;'>
 		<c:choose>
 		<c:when test="${ses ne null}">
 			<h3 class="float-left greenFontBold mb-3">개별종목상세</h3>
@@ -289,7 +289,7 @@
 			$("#sidebox").stop().animate({"top":position+currentPosition+"px"},1000); });
 	});
 	</script>
-	<div id = "sidebox" class="sidebox" style="position: absolute; right: 0px;  top: 10%; left:85%">
+	<div id = "sidebox" class="sidebox" style="position: absolute; right: 0px;  top: 10%; left:80%">
 
 		<jsp:include page="../chatting.jsp">
 		     <jsp:param name="chattingName" value="${svo.fullName}"/>

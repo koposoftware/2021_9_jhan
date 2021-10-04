@@ -51,59 +51,6 @@
 				<button type="button" class="btn btn-light btn-md grayFontBold titleBackground" id="show">Show</button>
 				<button type="button" class="btn btn-light btn-md grayFontBold titleBackground" id="hide">Hide</button>
 			</div>
-			<div 
-			style="text-align: center; ">
-			
-			<h3 class="mb-4 mt-5 text-center greenFontBold">내 관심종목</h3>
-			<table class="table table-hover" style="width: 525px; height: 200px;  margin-left:auto; margin-right:auto;" >
-				<thead class="titleBackground">
-					<tr class="greenLineBold">
-						<th class="grayFontBold">종목코드</th>
-						<th class="grayFontBold">현재가</th>
-						<th class="grayFontBold">목표가</th>
-						<th class="grayFontBold">52주 최고가</th>
-						<th class="grayFontBold">상세</th>
-						<th class="grayFontBold">거래하기</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${w_list}" var="svo">
-						<tr>  
-							<td class="grayFont">${svo.symbol }</td>
-							<td class="grayFont">${svo.cur_price }</td>
-							<td class="grayFont">${svo.avg_target }</td>
-							<td class="grayFont">${svo.year_high }</td>
-							<td class="grayFont"><a href="/stock/detail?symbol=${svo.symbol}&email=${ses}">
-							<i class="fas fa-info-circle"
-									style='font-size: 24px; color: #1F9688;'></i></a></td>
-							<c:choose>
-							<c:when test="${ses ne null}">
-							<td class="grayFont">
-							<a class="grayFont" data-symbol="${svo.symbol}" data-toggle="modal" data-target="#buyModal" id="buying" href="#" style="color : #fF5a5a; font-weight : bold" >Buy&nbsp;</a>
-							<a class="grayFont" data-symbol="${svo.symbol}" data-toggle="modal" data-target="#sellModal" id="selling" href="#" style="color : #1F96f8; font-weight : bold">Sell</a>
-							</td>
-							</c:when>
-							<c:otherwise>
-							<td>
-							세션미확인
-							</td>
-							</c:otherwise>
-							</c:choose>
-						</tr>
-					</c:forEach>
-				</tbody>
-				
-				
-				<c:if test="${w_list eq null}">
-				<tfoot>
-					<tr>
-						<td colspan="6" class="grayLight">종목 리스트를 둘러보세요&nbsp;&nbsp;<a href="/stock/list/?email=${ses}"><i class="fas fa-cart-plus" style='font-size: 24px; color: #1F9688;'></i></a></td>
-					</tr>                                                    
-				</tfoot>
-				</c:if>
-
-			</table>
-		</div>
 		<div 
 			style="text-align: center; ">
 			
@@ -183,8 +130,8 @@
 							<td class="grayFont"><fmt:formatNumber value="${avo.cur_price * avo.h_qty }" pattern="#,###.00" />&nbsp;USD</td>
 							<td class="${ ((1- (avo.h_qty * avo.avg_h_price) / (avo.h_qty * avo.cur_price))) < 0 ? 'minus' : 'plus'} 
 										${ ((1- (avo.h_qty * avo.avg_h_price) / (avo.h_qty * avo.cur_price))) == 0 ? 'none' : ''}">
-								<fmt:formatNumber value="${(avo.cur_price * avo.h_qty) / (avo.avg_h_price * avo.h_qty) - 1 }" pattern="#,##0.00%" />
-							<%--<fmt:formatNumber value="${(1- (avo.h_qty * avo.avg_h_price) / (avo.h_qty * avo.cur_price)) }" pattern="#,##0.00%" /> --%>
+								<%-- <fmt:formatNumber value="${(avo.cur_price * avo.h_qty) / (avo.avg_h_price * avo.h_qty) - 1 }" pattern="#,##0.00%" /> --%>
+							<fmt:formatNumber value="${(1- (avo.h_qty * avo.avg_h_price) / (avo.h_qty * avo.cur_price)) }" pattern="#,##0.00%" />
 							</td>
 						</tr>
 					</c:forEach>
@@ -193,20 +140,53 @@
 				<tfoot>
 					<tr>
 						<td colspan="6" class="grayLight">상세 정보를 확인해보세요&nbsp;&nbsp;<a href="/stock/detail?symbol=AAPL&email=${ses}"><i class="fas fa-cart-plus" style='font-size: 24px; color: #1F9688;'></i></a></td>
-					</tr>
-				</tfoot>
+				 </tr>
+				</tfoot>	
 				</c:if>
 			</table>
 			
-		</div>
 		
+			<div style="text-align: center; padding-top:400px">
+			
+			<h3 class="mb-4 mt-5 text-center greenFontBold">내 주문종목</h3>
+			<table class="table table-hover">
+				<thead class="titleBackground">
+					<tr class="greenLineBold">
+						<th class="grayFontBold" style="white-space:nowrap;">종목코드</th>
+						<th class="grayFontBold" style="white-space:nowrap;">현재가</th>
+						<th class="grayFontBold" style="white-space:nowrap;">희망가</th>
+						<th class="grayFontBold" style="white-space:nowrap;">주문량</th>
+						<th class="grayFontBold" style="white-space:nowrap;">총주문량</th>	
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${h_list}" var="avo">
+						<%-- <tr>
+							<td class="grayFont">${avo.symbol }</td>
+							<td class="grayFont">${avo.cur_price }</td>
+							<td class="grayFont">${avo.avg_h_price -1.03}</td>
+							<td class="grayFont">${avo.h_qty }</td>
+							<td class="grayFont"><fmt:formatNumber value="${avo.avg_h_price * avo.h_qty }" pattern="#,###.00" />&nbsp;USD</td>
+						</tr> --%>
+					</c:forEach>
+				</tbody>
+				<%-- <c:if test="${h_list[0] eq null }"> --%>
+				<tfoot>
+					<tr>
+						<td colspan="6" class="grayLight">추가로 주문해주세요&nbsp;&nbsp;<a href="/stock/detail?symbol=AAPL&email=${ses}"><i class="fas fa-cart-plus" style='font-size: 24px; color: #1F9688;'></i></a></td>
+					</tr>
+				</tfoot>
+				<%-- </c:if> --%>
+			</table>
+		</div>
+		</div>
 	</div>
 </div>
 
 <div class="modal fade" id="buyModal" tabindex="-1"
 	aria-labelledby="exampleModalLabel" aria-hidden="true"
 	data-backdrop="static" style="z-index: -1;">
-	<div class="modal-dialog">
+		<div class="modal-dialog" >
 		<div class="modal-content" style="background-color:rgb(255,255,255)">
 			<div class="modal-header">
 				<h5 class="modal-title grayFontBold" id="exampleModalLabel">매수주문	</h5>
@@ -227,7 +207,14 @@
 					<input class="form-control" type="text" name="tradeQty" id="tradeQty"
 						placeholder="거래 수량을 입력해주세요">
 					<div class="input-group-append">
-						<button type="button" class="btn btnBackgroundTrade" id="amountSearch" disabled="disabled">대금조회</button>
+						<button type="button" class="btn btnBackgroundTrade" id="amountSearch">대금조회</button>
+					</div>
+				</div>
+				<div class="input-group mt-1">
+					<input class="form-control" type="text" name="tradeQty" id="tradeQty"
+						placeholder="주문 가격을 입력해주세요">
+					<div class="input-group-append">
+						<button type="button" class="btn btnBackgroundTrade" id="buy" >주문하기</button>
 					</div>
 				</div>
 				<table class="table table-borderless mt-3" style="table-layout:fixed;">
@@ -261,7 +248,7 @@
 				<input type="hidden" id="deposit_store">
 			</div>
 			<div class="modal-footer">
-				<button type="submit" class="btn btnBackgroundTrade" id="buy">매수하기</button>
+				<button type="submit" class="btn btnBackgroundTrade" id="buy">현재가 매수하기</button>
 				<button type="button" class="btn btnBackgroundTrade" id="cancel" data-dismiss="modal">거래취소</button>
 			</div>
 		</div>
@@ -271,7 +258,7 @@
 <div class="modal fade" id="sellModal" tabindex="-1"
 	aria-labelledby="exampleModalLabel" aria-hidden="true"
 	data-backdrop="static" style="z-index: -1;">
-	<div class="modal-dialog">
+	<div class="modal-dialog" >
 		<div class="modal-content" style="background-color:#ffffff"> 
 			<div class="modal-header">
 				<h5 class="modal-title grayFontBold" id="exampleModalLabel">매도주문</h5>
@@ -292,7 +279,14 @@
 					<input class="form-control" type="text" name="tradeQty_sell" id="tradeQty_sell"
 						placeholder="거래 수량을 입력해주세요">
 					<div class="input-group-append">
-						<button type="button" class="btn btnBackgroundTrade" id="amountSearch_sell" disabled="disabled">대금조회</button>
+						<button type="button" class="btn btnBackgroundTrade" id="amountSearch_sell" >대금조회</button>
+					</div>
+				</div>
+				<div class="input-group mt-1">
+					<input class="form-control" type="text" name="tradeQty_sell" id="tradeQty_sell"
+						placeholder="주문 가격을 입력해주세요">
+					<div class="input-group-append">
+						<button type="button" class="btn btnBackgroundTrade" id="sell" >주문하기</button>
 					</div>
 				</div>
 				<table class="table table-borderless mt-3" style="table-layout:fixed;">
@@ -326,11 +320,12 @@
 				<input type="hidden" id="deposit_store_sell">
 			</div>
 			<div class="modal-footer">
-				<button type="submit" class="btn btnBackgroundTrade" id="sell">매도하기</button>
+				<button type="submit" class="btn btnBackgroundTrade" id="sell">현재가 매도하기</button>
 				<button type="button" class="btn btnBackgroundTrade" id="cancel_sell" data-dismiss="modal">거래취소</button>
 			</div>
 		</div>
 	</div>
+	
 </div>
 </c:when>
 <c:otherwise>

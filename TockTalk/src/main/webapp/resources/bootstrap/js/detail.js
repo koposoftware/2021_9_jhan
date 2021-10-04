@@ -207,9 +207,12 @@ function alpha_input_monthly(input) {
 		} else {
 			let cmtBox = $("#cmtBox");
 			cmtBox.empty();
-			
+			var cvoID;
 			for(let cvo of list) {
-				let cmtList = '<div class="d-flex flex-row comment-row"><div class="comment-text w-150"><h5 class="grayFontBold">'+cvo.writer+'</h5>';
+				cvoID = cvo.writer.split('@');
+				console.log(cvoID[0]);
+				console.log(cvo.writer);
+				let cmtList = '<div class="d-flex flex-row comment-row"><div class="comment-text w-150"><h5 class="grayFontBold">'+cvoID[0]+'</h5>';
 				cmtList += '<a href="" style="color:#1F9688" id="cmtDel"><i class="fa fa-trash-o" style="font-size:20px;"></i></a>';
 				cmtList += '<i class="fa fa-minus-circle ml-2" style="color:#1F9688; font-size:20px; cursor:pointer;" data-cNum="'+cvo.cNum+'" data-writer="'+cvo.writer+'"></i>';
 				cmtList += '<div class="comment-footer"><span class="mr-2">'+cvo.regdate+'</span>'

@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -66,6 +67,7 @@ public class StockController {
 	
 	@ResponseBody
 	@GetMapping(value = {"/tradable"}, produces = { MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE })
+ 	@Scheduled(cron = "00 0/50 09 * * *")
 	public ResponseEntity<List<StockVO>> tradable() {
 			
 		List<StockVO> svo_list = ssv.getStockList();

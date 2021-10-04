@@ -13,4 +13,11 @@ public class ChattingController {
 		mv.setViewName("chatting");
 		return mv;
 	}
+	
+	@RequestMapping("/messenger")
+	public ModelAndView messenger() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("messenger");
+		return mv;
+	}
 }

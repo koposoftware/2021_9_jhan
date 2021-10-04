@@ -25,7 +25,7 @@ $(document).on("click", "#symbolSearch", function() {
     		if(result.svo == null) {
             	var cur_price = result.avo.cur_price.toFixed(2);
             	var cur_price_comma = cur_price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
-            	var avg_h_price = result.avo.avg_h_price.toFixed(2);
+				var avg_h_price = result.avo.avg_h_price.toFixed(2);
             	var avg_h_price_comma = avg_h_price.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
             	var total = (parseInt(result.avo.h_qty) * parseFloat(result.avo.cur_price)).toFixed(2);
             	var total_comma = total.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");   
@@ -283,7 +283,7 @@ $(document).on("click", "#buy", function() {
 				contentType : "application/json; charset=utf-8"
 			}).done(function(result) {
 				if(parseInt(result) > 0) {
-					alert('정상 매수 하였습니다.');
+					alert('정상 주문 하였습니다.');
 					$("#cancel").click();
 					window.location.reload();					
 				}

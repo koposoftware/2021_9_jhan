@@ -48,14 +48,18 @@
 			text-align:center;
 			display:inline;
 		}
-	
+	.chatting .myMessage {
+	 border: 1px solid #888;  
+	 color: #555; text-align: right	; 
+	 }
+ 
+
 
 	</style>
 </head>
 
 <script type="text/javascript">
 	var ws;
-
 	function wsOpen(room){
 		ws = new WebSocket("ws://" + location.host + "/chatting/" + room);
 		wsEvt();
@@ -80,9 +84,15 @@
 					}
 				}else if(d.type == "message"){
 					if(d.sessionId == $("#sessionId").val()){
-						$("#chatting").append("<p class='me'>"+ d.userName +":" + d.msg + "</p>");	
+						/* $("#chatting").append("<p class='me' style='color: red; font-size:20px; font-weight:bold;'>"+ d.userName +"<br> : " + d.msg + "</p>");
+						 */$("#chatting").append("<p class='me'>"
+								+ "<strong>" + d.userName + "(me)</strong>"
+								+"<div class='me'>"	+ "<strong style='display : inline;' class='align-self-end'>" + "</strong>"
+								+ d.msg
+								+"</div>"
+								+ "</p>");
 					}else{
-						$("#chatting").append("<p class='others'>" + d.userName + " :" + d.msg + "</p>");
+						$("#chatting").append("<p class='others' style='color: black; font-size:20px;font-weight:bold;'>"+ d.userName +"<br> : " + d.msg + "</p>");	
 					}
 						
 				}else{
@@ -90,14 +100,12 @@
 				}
 			}
 		}
-
 		document.addEventListener("keypress", function(e){
 			if(e.keyCode == 13){ //enter press
 				send();
 			}
 		});
 	}
-
 	$(document).ready(function chatName(){
 	
 		var userName = '<%=(String)session.getAttribute("ses_name")%>';
@@ -114,7 +122,6 @@
 		}
 	});
 	
-
 	function send() {
 		var room = '<%= request.getParameter("symbol") %>';
 		var option ={
@@ -147,7 +154,6 @@
 		<div id="yourMsg">
 			<table class="inputTable">
 				<tr>
-					<th>메시지</th>
 					<th><input id="chat" style="width:260px;" placeholder="보낼 메시지를 입력해주세요."></th>
 					<th><button onclick="send()" id="sendBtn">보내기</button></th>
 				</tr>
