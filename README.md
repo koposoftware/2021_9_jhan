@@ -31,10 +31,10 @@
 
 |skill set| Frontend - HTML, CSS, Javascript|
 
-| | Backend - Java, Spring, Oracle|
+| Backend - Java, Spring, Oracle|
 
 |자격증|  정보처리기사|
 
 # 5. 프로젝트 사용기술 
 
-  <img src="skill.png"/>(/skill.png)
+  <img src="skill.png"/> 
