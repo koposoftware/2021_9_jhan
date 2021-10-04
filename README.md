@@ -24,7 +24,8 @@
 # 4. 본인 소개
 
 <img src="ANJAEHUN.jpg" width="90" height="120"/>
-|이름 |안재훈| 
+
+| 이름 |안재훈| 
 
 |연락처 | dybe15(@)naver.com|
 
