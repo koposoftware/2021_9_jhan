@@ -9,7 +9,7 @@
 
 # 2. 프로젝트 제안서
 
-   <img src="ppt.png"/>[발표자료](/ppt1.pptx)<br>
+   <img src="ppt.png"/>[발표자료](/ppt1.pdf)<br>
 
 
 # 3. 프로젝트 결과
