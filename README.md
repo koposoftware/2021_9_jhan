@@ -21,7 +21,7 @@ git page - https://github.com/koposoftware/2021_9_jhan
 
 ## 시연 동영상 
 
-   <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/embed/6LxbdIjWP04" frameborder="0"></iframe>
+   <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://www.youtube.com/watch?v=CD0yBfelqKM" frameborder="0"></iframe>
 
 # 4. 본인 소개
 
