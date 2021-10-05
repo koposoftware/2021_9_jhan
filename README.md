@@ -11,7 +11,7 @@ git page - https://github.com/koposoftware/2021_9_jhan
 
 # 2. 프로젝트 제안서
 
-   <img src="ppt.png"/>[발표자료](/ppt1.pdf)<br>
+   <img src="ppt1.jpg"/>[발표자료](/ppt1.pdf)<br>
 
 
 # 3. 프로젝트 결과
