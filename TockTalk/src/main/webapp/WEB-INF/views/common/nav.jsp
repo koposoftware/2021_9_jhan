@@ -63,7 +63,7 @@
 			<div class="modal-body">
 				<div class="input-group">
 					<input class="form-control" type="text" id="keyword_buy"
-						placeholder="주문가 148.0USD로 APPL 1개가 체결 되었습니다.">
+						placeholder="주문가 140.0USD로 APPL 1개가 체결 되었습니다.">
 					<!-- <div class="input-group-append">
 						<button type="button" class="btn btnBackgroundTrade" id="symbolSearch">종목조회</button>
 					</div> -->

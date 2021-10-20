@@ -27,7 +27,7 @@ body::before { position: fixed; top: 0; left: 0; right: 0; bottom: 0;
 <div style = "min-height : 75%;">
 	<div class="container" id="memberForm"  >
 		<h3 class="text-center" style="color: #ffffff; font-weight: bolder;">	
-		<img src="/resources/assets/img/favicon2.ico">Hana TockTalk</h3>
+		<img src="/resources/assets/img/favicon2.ico">TockTalk</h3>
 		<form action="/member/login" method="POST" id="form">
 			<div class="form-group">
 				<input class="form-control chk" type="email" name="email" id="email"
