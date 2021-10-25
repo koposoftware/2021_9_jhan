@@ -1,4 +1,4 @@
-# 하나 TockTalk
+# TockTalk
 
 [프로젝트 홈페이지 - https://koposoftware.github.io/2021_9_jhan/]
 
