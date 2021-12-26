@@ -26,18 +26,15 @@ git page - https://github.com/koposoftware/2021_9_jhan
 
 # 2. 프로젝트 제안서
 
-   <img src="ppt1.jpg"/>[발표자료](/ppt1.pdf)<br>
+[발표자료](/ppt1.pdf)<br>
 
 
 # 3. 프로젝트 결과
 
 ## 발표 ppt 
-   <img src="ppt.png"/>[발표자료](/project.pptx)<br>
+[발표자료](/project.pptx)<br>
 
-## 시연 동영상 
 
-  <iframe width="1180" height="664" src="https://www.youtube.com/embed/CD0yBfelqKM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  
   
 # 4. 본인 소개
 
