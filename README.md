@@ -32,7 +32,7 @@ git page - https://github.com/koposoftware/2021_9_jhan
 # 3. 프로젝트 결과
 
 ## 발표 ppt 
-[발표자료](/project.pptx)<br>
+[발표자료](/TockTalk_안재훈.pptx)<br>
 
 
   
