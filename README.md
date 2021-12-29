@@ -24,19 +24,14 @@ git page - https://github.com/koposoftware/2021_9_jhan
 - API : Alpha Vintage, TradingView
 
 
-# 2. 프로젝트 제안서
-
-[발표자료](/ppt1.pdf)<br>
-
-
-# 3. 프로젝트 결과
+# 2. 프로젝트 결과
 
 ## 발표 ppt 
 [발표자료](/TockTalk_안재훈.pptx)<br>
 
 
   
-# 4. 본인 소개
+# 3. 본인 소개
 
 <img src="ANJAEHUN.jpg" width="90" height="120"/>
 
@@ -50,7 +45,7 @@ git page - https://github.com/koposoftware/2021_9_jhan
 
 |자격증|  정보처리기사|
 
-# 5. 프로젝트 사용기술 
+# 4. 프로젝트 사용기술 
 
 ## 사용기술
 -Spring MVC 
@@ -61,7 +56,7 @@ git page - https://github.com/koposoftware/2021_9_jhan
 - PL/SQL
   <img src="skill.png"/> 
   
-# 6. 기대효과 및 보완점
+# 5. 기대효과 및 보완점
 - 많은 신규 가입자가 주식에 관심을 가지고 증권계좌를 개설하고 있습니다. 그 중에서 대외금융자산 투자를 시작하는 초보 투자자들을 위한 투자 및 소통의 공간을 제공합니다. 
 - 그로 인해 두 분야의 이용고객에 대한 점유율을 증가시키는 기대효과를 볼 수 있습니다.
 
