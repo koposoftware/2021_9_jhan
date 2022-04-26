@@ -33,7 +33,6 @@ git page - https://github.com/koposoftware/2021_9_jhan
   
 # 3. 본인 소개
 
-<img src="ANJAEHUN.jpg" width="90" height="120"/>
 
 | 이름 |안재훈| 
 
